@@ -1,0 +1,49 @@
+[System]
+Name='ejercicio2_primera_parte'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='X1'
+Range=[-2 2]
+NumMFs=3
+MF1='negativa':'linzmf',[-2 0]
+MF2='cero':'trimf',[-2 0 2]
+MF3='positiva':'linsmf',[0 2]
+
+[Input2]
+Name='X2'
+Range=[-5 5]
+NumMFs=3
+MF1='negativa':'linzmf',[-5 0]
+MF2='cero':'trimf',[-5 0 5]
+MF3='positiva':'linsmf',[0 5]
+
+[Output1]
+Name='U'
+Range=[-10 10]
+NumMFs=5
+MF1='NG-G':'linzmf',[-6 -2]
+MF2='NG-M':'trimf',[-6 -2 0]
+MF3='Z':'trimf',[-2 0 2]
+MF4='PS-M':'trimf',[0 2 6]
+MF5='PS-G':'linsmf',[2 6]
+
+[Rules]
+1 1, 2 (1) : 1
+1 2, 4 (1) : 1
+1 3, 5 (1) : 1
+2 1, 2 (1) : 1
+2 2, 3 (1) : 1
+2 3, 4 (1) : 1
+3 1, 1 (1) : 1
+3 2, 2 (1) : 1
+3 3, 4 (1) : 1

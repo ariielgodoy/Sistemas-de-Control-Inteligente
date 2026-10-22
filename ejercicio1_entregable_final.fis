@@ -1,0 +1,40 @@
+[System]
+Name='ejercicio1_entregable_final'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='service'
+Range=[0 1]
+NumMFs=3
+MF1='poor':'gaussmf',[0.1769 -1.388e-17]
+MF2='good':'dsigmf',[26.37 0.2917 26.37 0.7083]
+MF3='excellent':'gbellmf',[0.2083 2.5 1]
+
+[Input2]
+Name='food'
+Range=[0 1]
+NumMFs=2
+MF1='rancid':'linzmf',[0.1 0.5]
+MF2='delicious':'trapmf',[0.592625899280576 0.900179856115108 1 1.75]
+
+[Output1]
+Name='tip'
+Range=[0 1]
+NumMFs=3
+MF1='cheap':'trimf',[0 0.15 0.3]
+MF2='average':'trimf',[0.3 0.45 0.6]
+MF3='generous':'trimf',[0.6 0.75 1]
+
+[Rules]
+1 1, 1 (1) : 2
+2 0, 2 (1) : 1
+3 2, 3 (1) : 2
