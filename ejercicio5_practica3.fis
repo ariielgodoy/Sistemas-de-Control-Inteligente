@@ -1,0 +1,77 @@
+[System]
+Name='ejercicio5_practica3'
+Type='sugeno'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=9
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='chi1'
+Range=[0 150]
+NumMFs=3
+MF1='small':'linzmf',[0 50]
+MF2='medium':'trimf',[30 60 90]
+MF3='big':'linsmf',[70 140]
+
+[Input2]
+Name='chi2'
+Range=[0 150]
+NumMFs=2
+MF1='small':'linzmf',[0 40]
+MF2='big':'linsmf',[20 80]
+
+[Input3]
+Name='chi3'
+Range=[-80 80]
+NumMFs=3
+MF1='outwards':'linzmf',[-60 -20]
+MF2='forward':'trimf',[-30 0 30]
+MF3='inwards':'linsmf',[20 60]
+
+[Input4]
+Name='chi4'
+Range=[0 150]
+NumMFs=1
+MF1='small':'linzmf',[0 40]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=20
+MF1='mf1':'linear',[0 0 -0.045 0.004 3]
+MF2='mf2':'linear',[0 0 -0.03 -0.09 3]
+MF3='mf3':'linear',[-0.041 0.04 0 0 3]
+MF4='mf4':'linear',[-0.026 0.061 -0.05 0 0.303]
+MF5='mf5':'linear',[0 0 0 0 0.5]
+MF6='mf6':'linear',[0 0 0 0 0.5]
+MF7='mf7':'linear',[0 0 0 0 0.5]
+MF8='mf8':'linear',[0 0 0 0 0.5]
+MF9='mf9':'linear',[0 0 0 0 0.5]
+MF10='mf10':'linear',[0 0 0 0 0.5]
+MF11='mf11':'linear',[0 0 0 0 0.5]
+MF12='mf12':'linear',[0 0 0 0 0.5]
+MF13='mf13':'linear',[0 0 0 0 0.5]
+MF14='mf14':'linear',[0 0 0 0 0.5]
+MF15='mf15':'linear',[0 0 0 0 0.5]
+MF16='mf16':'linear',[0 0 0 0 0.5]
+MF17='mf17':'linear',[0 0 0 0 0.5]
+MF18='mf18':'linear',[0 0 0 0 0.5]
+MF19='mf19':'linear',[0 0 0 0 0.5]
+MF20='mf20':'linear',[0 0 0 0 0.5]
+
+[Rules]
+1 1 0 0, 1 (1) : 1
+2 1 0 0, 1 (1) : 1
+3 1 0 0, 1 (1) : 1
+1 2 0 0, 1 (1) : 1
+2 2 0 0, 1 (1) : 1
+3 2 0 0, 1 (1) : 1
+1 0 0 0, 1 (1) : 1
+2 0 0 0, 1 (1) : 1
+3 0 0 0, 1 (1) : 1
